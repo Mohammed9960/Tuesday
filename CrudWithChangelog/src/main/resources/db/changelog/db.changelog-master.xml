@@ -1,18 +1,49 @@
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="1" author="Mohammed">
-        <createTable tableName="newTable">
-            <column name="id" type="bigint" autoIncrement="true">
+
+    <changeSet id="new_change" author="mohammed">
+        <comment>Create table for Author entity</comment>
+        <createTable tableName="author">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="first_name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <!-- Add more columns as needed -->
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="new_Change" author="mohammed">
+        <comment>Create table for Book entity</comment>
+        <createTable tableName="book">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="book" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="book_version" type="int"/>
+            <column name="publish_date" type="varchar(255)"/>
+            <column name="author_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="book" baseColumnNames="author_id"
+                                 constraintName="fk_book_author"
+                                 referencedTableName="author" referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+
+
+
 
 </databaseChangeLog>

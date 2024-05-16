@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
+    @SequenceGenerator(name = "book_seq", sequenceName = "book_seq", allocationSize = 1)
+
     private Integer id;
     private String book;
     private Integer bookVersion;
