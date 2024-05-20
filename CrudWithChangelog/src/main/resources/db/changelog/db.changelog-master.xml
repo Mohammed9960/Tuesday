@@ -6,7 +6,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
 
-    <changeSet id="new_change" author="mohammed">
+    <changeSet id="1" author="mohammed">
         <comment>Create table for Author entity</comment>
         <createTable tableName="author">
             <column name="id" type="int" autoIncrement="true">
@@ -21,7 +21,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="new_Change" author="mohammed">
+    <changeSet id="2" author="mohammed">
         <comment>Create table for Book entity</comment>
         <createTable tableName="book">
             <column name="id" type="int">
@@ -37,11 +37,39 @@
             </column>
         </createTable>
 
+
+
+
         <addForeignKeyConstraint baseTableName="book" baseColumnNames="author_id"
                                  constraintName="fk_book_author"
                                  referencedTableName="author" referencedColumnNames="id"
                                  onDelete="CASCADE"/>
     </changeSet>
+
+    <changeSet id="3" author="mohammed">
+        <comment>Add created_at and updated_at columns to author table</comment>
+        <addColumn tableName="author">
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="4" author="mohammed">
+        <comment>Add created_at and updated_at columns to book table</comment>
+        <addColumn tableName="book">
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 
 
 
