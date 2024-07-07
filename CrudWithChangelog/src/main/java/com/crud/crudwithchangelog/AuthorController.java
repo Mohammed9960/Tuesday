@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/api/v2/author")
+@RequestMapping("/api/user/v2/author")
 @AllArgsConstructor
 public class AuthorController {
     private final AuthorService service;
