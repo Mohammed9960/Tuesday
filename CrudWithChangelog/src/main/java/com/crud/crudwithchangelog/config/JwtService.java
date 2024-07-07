@@ -46,7 +46,7 @@ public class JwtService {
                 .verifyWith(getSecretKey())
                 .build()
                 .parseSignedClaims(token)
-                .getPayload();oijssdf;lj
+                .getPayload();
 
 
     }
