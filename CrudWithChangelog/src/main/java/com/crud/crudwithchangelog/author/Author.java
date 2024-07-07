@@ -1,5 +1,6 @@
-package com.crud.crudwithchangelog;
+package com.crud.crudwithchangelog.author;
 
+import com.crud.crudwithchangelog.book.Book;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

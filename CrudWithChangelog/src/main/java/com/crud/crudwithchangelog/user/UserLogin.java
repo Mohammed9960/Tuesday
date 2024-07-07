@@ -1,4 +1,4 @@
-package com.crud.crudwithchangelog;
+package com.crud.crudwithchangelog.user;
 
 import com.crud.crudwithchangelog.config.JwtService;
 import lombok.RequiredArgsConstructor;

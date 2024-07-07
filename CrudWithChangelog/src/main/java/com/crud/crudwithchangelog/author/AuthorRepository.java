@@ -1,4 +1,4 @@
-package com.crud.crudwithchangelog;
+package com.crud.crudwithchangelog.author;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,7 +1,7 @@
 package com.crud.crudwithchangelog.config;
 
 
-import com.crud.crudwithchangelog.UserService;
+import com.crud.crudwithchangelog.user.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
