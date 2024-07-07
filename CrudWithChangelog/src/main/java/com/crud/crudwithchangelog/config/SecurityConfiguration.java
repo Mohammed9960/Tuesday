@@ -1,6 +1,6 @@
 package com.crud.crudwithchangelog.config;
 
-import com.crud.crudwithchangelog.UserService;
+import com.crud.crudwithchangelog.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

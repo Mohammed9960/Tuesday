@@ -1,4 +1,4 @@
-package com.crud.crudwithchangelog;
+package com.crud.crudwithchangelog.author;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
