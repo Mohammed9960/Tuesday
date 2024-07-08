@@ -25,6 +25,10 @@ public class BookController {
         return service.getAllBooks();
 
     }
+    @GetMapping("/hi")
+    public String hi() {
+        return "hi";
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Integer id){
@@ -37,10 +41,6 @@ public class BookController {
         service.deleteBookById(id);
         return ResponseEntity.ok(service.getBookById(id));
     }
-
-
-
-
 
     @PutMapping("{id}/update")
     public ResponseEntity<Book> updateBook(@PathVariable("id") Integer id,@RequestBody Book book) {
