@@ -2,6 +2,7 @@ package com.crud.crudwithchangelog.book;
 
 import com.crud.crudwithchangelog.author.Author;
 import com.crud.crudwithchangelog.author.AuthorRepository;
+import com.crud.crudwithchangelog.kafka.KafkaProducer;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +14,11 @@ public class BookService {
 
     private final BookRepository repository;
     private final AuthorRepository authorRepository;
+    public final KafkaProducer kafkaProducer;
 
     public void saveBook(Book book){
         repository.save(book);
+        kafkaProducer.sendMessage(book);
     }
     public List<Book> getAllBooks(){
         return repository.findAll();
