@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user/v1/library")
+@RequestMapping("/api/v1/library")
 @AllArgsConstructor
 public class BookController {
 
     private final BookService service;
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         service.saveBook(book);
         return ResponseEntity.ok(book);
